@@ -8,7 +8,7 @@ public class SceneFader : MonoBehaviour
     public static SceneFader Instance;
     public CanvasGroup fadeCanvas;
     public float fadeDuration = 1f;
-
+    private bool _isFading = false;
     void Awake()
     {
         if (Instance != null)
@@ -50,14 +50,20 @@ public class SceneFader : MonoBehaviour
 
     public void FadeToScene(string sceneName)
     {
+        if (_isFading) return;
+
         StartCoroutine(FadeAndLoad(sceneName));
     }
 
     private IEnumerator FadeAndLoad(string sceneName)
     {
+        _isFading = true;
+
         yield return FadeOut();
         SceneManager.LoadScene(sceneName);
         yield return new WaitForSeconds(0.1f);
         yield return FadeIn();
+
+        _isFading = false;
     }
 }
