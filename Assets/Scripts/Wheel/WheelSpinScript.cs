@@ -17,5 +17,8 @@ public class WheelSpinScript : MonoBehaviour
     public void StopSpinning()
     {
         _anim?.SetBool("isSpinning", false);
+        int spinNumber = _anim.GetInteger("spinNumber");
+        _anim.SetInteger("spinNumber", ++spinNumber);
+        Debug.Log("Spin number is now " + spinNumber);
     }
 }

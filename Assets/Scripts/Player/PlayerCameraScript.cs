@@ -6,6 +6,7 @@ public class PlayerCameraScript : MonoBehaviour
     [Header("Game Objects")]
     [SerializeField] private GameObject _target;
     [SerializeField] private Camera _camera;
+    [SerializeField] private Animator _wheelAnim;
     private float _MouseYRotation = 0f;
 
     [Header("Raycast Settings")]
@@ -15,6 +16,7 @@ public class PlayerCameraScript : MonoBehaviour
     {
         _target = GameObject.FindGameObjectWithTag("Player");
         _camera = Camera.main;
+        _wheelAnim = GameObject.FindWithTag("Wheel").GetComponent<Animator>();
         AlignCameraFirstPerson();
 
         Cursor.lockState = CursorLockMode.Locked;
@@ -67,7 +69,7 @@ public class PlayerCameraScript : MonoBehaviour
                 // Try to get the ButtonEventTrigger component from the hit object
                 ButtonEventTrigger button = hit.collider.GetComponent<ButtonEventTrigger>();
 
-                if (button != null)
+                if (button != null && !_wheelAnim.GetBool("isSpinning"))
                 {
                     // Trigger the public method on the button
                     button.PressButton();
