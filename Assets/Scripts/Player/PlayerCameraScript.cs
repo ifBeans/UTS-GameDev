@@ -29,6 +29,11 @@ public class PlayerCameraScript : MonoBehaviour
         {
             TryInteract();
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            _wheelAnim?.SetBool("hasQuest", false);
+        }
     }
 
     void LateUpdate()
@@ -69,11 +74,19 @@ public class PlayerCameraScript : MonoBehaviour
                 // Try to get the ButtonEventTrigger component from the hit object
                 ButtonEventTrigger button = hit.collider.GetComponent<ButtonEventTrigger>();
 
-                if (button != null && !_wheelAnim.GetBool("isSpinning"))
+                if (button != null && !_wheelAnim.GetBool("isSpinning") && !_wheelAnim.GetBool("hasQuest") && _wheelAnim.GetInteger("spinNumber") <= 3)
                 {
                     // Trigger the public method on the button
                     button.PressButton();
                 }
+            }
+
+            if (hit.collider.CompareTag("Van"))
+            {
+                VanEventTrigger van = hit.collider.GetComponent<VanEventTrigger>();
+
+                Debug.Log("Pass The Day");
+                van.PressVan();
             }
             // You can add other interaction logic here (e.g., opening doors)
         }

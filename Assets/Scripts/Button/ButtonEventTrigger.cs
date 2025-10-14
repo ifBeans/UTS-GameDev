@@ -11,5 +11,4 @@ public class ButtonEventTrigger : MonoBehaviour
         Debug.Log(gameObject.name + " was pressed!");
         OnButtonPressed?.Invoke();
     }
-
 }
