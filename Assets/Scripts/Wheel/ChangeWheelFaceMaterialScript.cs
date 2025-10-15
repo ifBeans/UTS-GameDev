@@ -5,6 +5,8 @@ public class ChangeWheelFaceMaterialScript : MonoBehaviour
     [SerializeField] private MeshRenderer _wheelFaceRenderer;
     [SerializeField] private Texture _day1IdleTexture;
     [SerializeField] private Texture _day2IdleTexture;
+    [SerializeField] private Texture _day3IdleTexture;
+    [SerializeField] private Texture _day4IdleTexture;
     private Animator _wheelAnim;
     private Transform _wheelTransform;
 
@@ -21,6 +23,12 @@ public class ChangeWheelFaceMaterialScript : MonoBehaviour
         {
             case 2:
                 _wheelFaceRenderer.material.mainTexture = _day2IdleTexture;
+                return;
+            case 3:
+                _wheelFaceRenderer.material.mainTexture = _day3IdleTexture;
+                return;
+            case 4:
+                _wheelFaceRenderer.material.mainTexture = _day4IdleTexture;
                 return;
         }
     }

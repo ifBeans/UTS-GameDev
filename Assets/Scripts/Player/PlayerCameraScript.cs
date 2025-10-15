@@ -7,6 +7,7 @@ public class PlayerCameraScript : MonoBehaviour
     [SerializeField] private GameObject _target;
     [SerializeField] private Camera _camera;
     [SerializeField] private Animator _wheelAnim;
+    [SerializeField] private WarningMessageScript _warningMessageScript;
     private float _MouseYRotation = 0f;
 
     [Header("Raycast Settings")]
@@ -17,6 +18,7 @@ public class PlayerCameraScript : MonoBehaviour
         _target = GameObject.FindGameObjectWithTag("Player");
         _camera = Camera.main;
         _wheelAnim = GameObject.FindWithTag("Wheel").GetComponent<Animator>();
+        //_warningMessageScript = GameObject.FindWithTag("Main UI").GetComponent<WarningMessageScript>();
         AlignCameraFirstPerson();
 
         Cursor.lockState = CursorLockMode.Locked;
@@ -79,14 +81,32 @@ public class PlayerCameraScript : MonoBehaviour
                     // Trigger the public method on the button
                     button.PressButton();
                 }
+
+                else if(_wheelAnim.GetBool("hasQuest"))
+                {
+                    _warningMessageScript.ShowWarning("You still haven't finished the previous quest!");
+                }
+
+                else if(_wheelAnim.GetInteger("spinNumber") > 3)
+                {
+                    _warningMessageScript.ShowWarning("You don't have any spins left, return to the Van!");
+                }
             }
 
             if (hit.collider.CompareTag("Van"))
             {
                 VanEventTrigger van = hit.collider.GetComponent<VanEventTrigger>();
 
-                Debug.Log("Pass The Day");
-                van.PressVan();
+                if(_wheelAnim.GetInteger("spinNumber") > 3)
+                {
+                    Debug.Log("Pass The Day");
+                    van.PressVan();
+                }
+
+                else
+                {
+                    _warningMessageScript.ShowWarning("You still have some spins left!");
+                }
             }
             // You can add other interaction logic here (e.g., opening doors)
         }

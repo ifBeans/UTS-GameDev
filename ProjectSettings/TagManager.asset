@@ -7,6 +7,7 @@ TagManager:
   - Button
   - Wheel
   - Van
+  - Main UI
   layers:
   - Default
   - TransparentFX
