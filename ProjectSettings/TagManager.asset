@@ -8,6 +8,8 @@ TagManager:
   - Wheel
   - Van
   - Main UI
+  - Wheel Item
+  - NPC
   layers:
   - Default
   - TransparentFX

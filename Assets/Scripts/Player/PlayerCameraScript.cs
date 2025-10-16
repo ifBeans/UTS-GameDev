@@ -91,9 +91,11 @@ public class PlayerCameraScript : MonoBehaviour
                 {
                     _warningMessageScript.ShowWarning("You don't have any spins left, return to the Van!");
                 }
+
+                return;
             }
 
-            if (hit.collider.CompareTag("Van"))
+            else if (hit.collider.CompareTag("Van"))
             {
                 VanEventTrigger van = hit.collider.GetComponent<VanEventTrigger>();
 
@@ -107,8 +109,33 @@ public class PlayerCameraScript : MonoBehaviour
                 {
                     _warningMessageScript.ShowWarning("You still have some spins left!");
                 }
+
+                return;
             }
-            // You can add other interaction logic here (e.g., opening doors)
+
+            else if (hit.collider.CompareTag("Wheel Item"))
+            {
+                Debug.Log("Item in view");
+                GameObject item = hit.collider.gameObject;
+
+                // (Optional) show UI like “Click to pick up item”
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    PlayerInventoryScript.Instance.PickUpItem(item);
+                }
+
+                return;
+            }
+
+            else if (hit.collider.CompareTag("NPC"))
+            {
+                NPCScript npc = hit.collider.GetComponent<NPCScript>();
+                if (npc != null)
+                {
+                    npc.ReceiveItem();
+                }
+            }
         }
     }
 }
