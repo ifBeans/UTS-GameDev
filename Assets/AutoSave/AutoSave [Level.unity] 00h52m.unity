@@ -6002,7 +6002,8 @@ MonoBehaviour:
   _wheelFaceRenderer: {fileID: 6819568065442145875}
   _day1IdleTexture: {fileID: 2800000, guid: b980610d14211e74494704463d70f882, type: 3}
   _day2IdleTexture: {fileID: 2800000, guid: b08f90f8dff7dfa40b5b21cb2372ad64, type: 3}
-  _day3IdleTexture: {fileID: 0}
+  _day3IdleTexture: {fileID: 2800000, guid: 8034106048aa6ee44873e3e3665245a5, type: 3}
+  _day4IdleTexture: {fileID: 2800000, guid: ce685254bd91bac4f8d9a8f6b1eb5f0b, type: 3}
 --- !u!43 &2105100615
 Mesh:
   m_ObjectHideFlags: 0
