@@ -4,7 +4,7 @@ using UnityEngine;
 public class IntroSequence : MonoBehaviour
 {
     public Transform playerTransform;
-    public Transform introPositionMarker; // Empty Object untuk posisi player intro
+    public Transform introPositionMarker;
     public Camera playerCamera;
     public SceneFader sceneFader;
     public DialogueManager dialogueManager;
@@ -24,9 +24,9 @@ public class IntroSequence : MonoBehaviour
 
     public IEnumerator PlayIntroSequence()
     {
+        GameStateManager.Instance.SetState(GameState.Cutscene);
         _introPlayed = true;
 
-        // Disable player control
         var playerMove = FindFirstObjectByType<PlayerMoveScript>();
         var playerCameraScript = FindFirstObjectByType<PlayerCameraScript>();
 
@@ -35,18 +35,14 @@ public class IntroSequence : MonoBehaviour
         if (playerCameraScript != null)
             playerCameraScript.enabled = false;
 
-        // LANGSUNG teleport player ke posisi intro marker
         if (introPositionMarker != null && playerTransform != null)
         {
-            // Teleport player ke posisi dan rotasi marker
             playerTransform.position = introPositionMarker.position;
             playerTransform.rotation = introPositionMarker.rotation;
         }
 
-        // Tunggu sebentar
         yield return new WaitForSeconds(delayBeforeFade);
 
-        // Fade Out (dari hitam ke terlihat)
         if (sceneFader != null)
         {
             yield return StartCoroutine(sceneFader.FadeOut());
@@ -54,23 +50,22 @@ public class IntroSequence : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
-        // Mulai dialogue
         if (dialogueManager != null && introDialogue.Length > 0)
         {
             dialogueManager.StartDialogue(introDialogue);
 
-            // Tunggu sampai dialogue selesai
             while (dialogueManager.IsDialogueActive())
             {
                 yield return null;
             }
         }
 
-        // Enable player control kembali (tanpa return camera karena sudah di posisi)
         if (playerMove != null)
             playerMove.enabled = true;
         if (playerCameraScript != null)
             playerCameraScript.enabled = true;
+
+        GameStateManager.Instance.SetState(GameState.Normal);
     }
 
 

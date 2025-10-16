@@ -9,8 +9,8 @@ public class DialogueLine
     public string name;
     [TextArea(3, 5)]
     public string sentence;
-    public bool requireInteraction = false; // Butuh tekan E
-    public string interactionPrompt; // Text yang muncul
+    public bool requireInteraction = false; 
+    public string interactionPrompt; 
 }
 
 public class DialogueManager : MonoBehaviour
@@ -19,7 +19,7 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
     public GameObject nextIndicator;
-    public GameObject interactionIndicator; // Untuk "Press E"
+    public GameObject interactionIndicator; 
     public TextMeshProUGUI interactionText;
     public GameObject crosshair;
 
@@ -43,7 +43,6 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        // Cek intervention dulu
         if (waitingForInteraction && Input.GetKeyDown(KeyCode.E))
         {
             waitingForInteraction = false;
@@ -52,7 +51,6 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        // Normal dialogue flow
         if (isDialogueActive && !waitingForInteraction && Input.GetKeyDown(KeyCode.Space))
         {
             if (isTyping)
@@ -71,6 +69,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(DialogueLine[] lines)
     {
+        GameStateManager.Instance.SetState(GameState.Dialogue);
         isDialogueActive = true;
         dialoguePanel.SetActive(true);
 
@@ -106,7 +105,6 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(true);
         DialogueLine line = dialogueLines.Dequeue();
 
-        // Cek apakah butuh interaction
         if (line.requireInteraction)
         {
             waitingForInteraction = true;
@@ -116,7 +114,6 @@ public class DialogueManager : MonoBehaviour
             if (interactionText != null)
                 interactionText.text = line.interactionPrompt;
 
-            // Jangan tampilkan dialogue dulu, tunggu tekan E
             dialoguePanel.SetActive(false);
             dialogueText.text = "";
             nameText.text = "";
@@ -161,6 +158,7 @@ public class DialogueManager : MonoBehaviour
 
         if (crosshair != null)
             crosshair.SetActive(true);
+        GameStateManager.Instance.SetState(GameState.Normal);
     }
 
     public bool IsDialogueActive()

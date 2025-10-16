@@ -4,13 +4,15 @@ using UnityEngine.SceneManagement;
 public class PauseMenuController : MonoBehaviour
 {
     public GameObject pauseMenuUI;
+
     private bool _isPaused = false;
     private PlayerCameraScript _playerCameraScript;
+    private GameState _previousState;
 
     private void Awake()
     {
         _isPaused = false;
-       pauseMenuUI?.SetActive(false);
+        pauseMenuUI?.SetActive(false);
     }
 
     private void Start()
@@ -20,6 +22,11 @@ public class PauseMenuController : MonoBehaviour
 
     void Update()
     {
+        if (GameStateManager.Instance == null) return;
+
+        // Hapus baris ini supaya pause bisa diakses kapanpun
+        // if (GameStateManager.Instance.IsBusy()) return;
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (_isPaused)
@@ -36,17 +43,26 @@ public class PauseMenuController : MonoBehaviour
         _isPaused = false;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        _playerCameraScript.enabled = true;
+        GameStateManager.Instance.SetState(_previousState);
+        if (!GameStateManager.Instance.IsBusy())
+            _playerCameraScript.enabled = true;
+
+        // Kembalikan ke state sebelumnya (misal Dialogue atau Cutscene)
     }
 
     public void Pause()
     {
+        _previousState = GameStateManager.Instance.GetState();
+
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         _isPaused = true;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         _playerCameraScript.enabled = false;
+
+        // Set state khusus agar UI lain tahu game sedang dipause
+        GameStateManager.Instance.SetState(GameState.Paused);
     }
 
     public void QuitToMainMenu()
@@ -55,5 +71,6 @@ public class PauseMenuController : MonoBehaviour
         SceneManager.LoadScene("StartMenu");
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        GameStateManager.Instance.SetState(GameState.Normal);
     }
 }
