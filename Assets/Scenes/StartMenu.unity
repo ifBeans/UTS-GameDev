@@ -1062,6 +1062,10 @@ PrefabInstance:
       propertyPath: m_UiScaleMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2547728576204822555, guid: 2a86593bb494b224597ef10c211ed728, type: 3}
+      propertyPath: fadeDuration
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2775025159590736403, guid: 2a86593bb494b224597ef10c211ed728, type: 3}
       propertyPath: m_Name
       value: FadeCanvas
