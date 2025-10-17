@@ -654,6 +654,206 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 271689710}
   m_CullTransparentMesh: 1
+--- !u!1001 &277143322
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 100000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
+      propertyPath: m_Name
+      value: Van
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
+      propertyPath: m_TagString
+      value: Van
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.808531
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.808531
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.808531
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.6749
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 22.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -44.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: def4f5402eafd694c97e9169b6874cdb, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 277143325}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 277143324}
+  m_SourcePrefab: {fileID: 100100000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
+--- !u!1 &277143323 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
+  m_PrefabInstance: {fileID: 277143322}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &277143324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277143323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61b821940aad0a6458f48d2887a076e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VanEventTrigger
+  OnVanPressed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2093709306}
+        m_TargetAssemblyTypeName: WheelSpinScript, Assembly-CSharp
+        m_MethodName: AddDay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 572494845}
+        m_TargetAssemblyTypeName: UIScript, Assembly-CSharp
+        m_MethodName: UpdateDayCount
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2093709306}
+        m_TargetAssemblyTypeName: WheelSpinScript, Assembly-CSharp
+        m_MethodName: ResetSpinNumber
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 572494845}
+        m_TargetAssemblyTypeName: UIScript, Assembly-CSharp
+        m_MethodName: ResetSpinCount
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2093709307}
+        m_TargetAssemblyTypeName: ChangeWheelFaceMaterialScript, Assembly-CSharp
+        m_MethodName: UpdateFaceMaterial
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2093709307}
+        m_TargetAssemblyTypeName: ChangeWheelFaceMaterialScript, Assembly-CSharp
+        m_MethodName: ResetWheelFaceRotation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!65 &277143325
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277143323}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.9601218, y: 0.9617596, z: 0.72366977}
+  m_Center: {x: 0.045939762, y: 0.462812, z: 0.006946155}
 --- !u!4 &301995053 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0ae184c0d61ba7c4ea7892e0dacaca69, type: 3}
@@ -4318,206 +4518,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a86593bb494b224597ef10c211ed728, type: 3}
---- !u!1001 &1228792594
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 100000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
-      propertyPath: m_Name
-      value: Van
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
-      propertyPath: m_TagString
-      value: Van
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.808531
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.808531
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.808531
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.6749
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 22.96
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -44.37
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2300000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: def4f5402eafd694c97e9169b6874cdb, type: 2}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 100000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1228792599}
-    - targetCorrespondingSourceObject: {fileID: 100000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1228792596}
-  m_SourcePrefab: {fileID: 100100000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
---- !u!1 &1228792595 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: 9bd72fad8a317e24ca28a013b205fea2, type: 3}
-  m_PrefabInstance: {fileID: 1228792594}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1228792596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1228792595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61b821940aad0a6458f48d2887a076e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::VanEventTrigger
-  OnVanPressed:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2093709306}
-        m_TargetAssemblyTypeName: WheelSpinScript, Assembly-CSharp
-        m_MethodName: AddDay
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 572494845}
-        m_TargetAssemblyTypeName: UIScript, Assembly-CSharp
-        m_MethodName: UpdateDayCount
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2093709306}
-        m_TargetAssemblyTypeName: WheelSpinScript, Assembly-CSharp
-        m_MethodName: ResetSpinNumber
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 572494845}
-        m_TargetAssemblyTypeName: UIScript, Assembly-CSharp
-        m_MethodName: ResetSpinCount
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2093709307}
-        m_TargetAssemblyTypeName: ChangeWheelFaceMaterialScript, Assembly-CSharp
-        m_MethodName: UpdateFaceMaterial
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2093709307}
-        m_TargetAssemblyTypeName: ChangeWheelFaceMaterialScript, Assembly-CSharp
-        m_MethodName: ResetWheelFaceRotation
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!65 &1228792599
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1228792595}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.9601218, y: 0.9617596, z: 0.72366977}
-  m_Center: {x: 0.045939762, y: 0.462812, z: 0.006946155}
 --- !u!1 &1236673646
 GameObject:
   m_ObjectHideFlags: 0
@@ -8634,6 +8634,6 @@ SceneRoots:
   - {fileID: 825878360}
   - {fileID: 324512974}
   - {fileID: 536637344}
-  - {fileID: 1228792594}
   - {fileID: 1672655774}
   - {fileID: 1655151868}
+  - {fileID: 277143322}
